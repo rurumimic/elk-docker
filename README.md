@@ -49,3 +49,14 @@ services:
 ```bash
 docker-compose up -d
 ```
+
+## Test
+
+```js
+const request = require('request');
+
+request.post({ url: 'http://localhost:8080/starwars/obiwan/4', form: { message: 'hello there' }}, (err, res, body) => {
+  if (err) { return console.log(err); }
+  console.log(body);
+});
+```
