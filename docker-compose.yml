@@ -1,15 +1,3 @@
-# elk-docker
-
-ELK stack with docker
-
-## docker-compose.yml
-
-You need these:
-- `kibana.yml`
-- `logstash.yml`
-- `pipeline/logstash.conf`
-
-```yml
 version: '2.4'
 services:
   elasticsearch:
@@ -29,6 +17,7 @@ services:
     mem_limit: 700M
     ports:
       - 5044:5044
+      - 8080:8080 # http input
       - 9600:9600
     volumes:
       - ./pipeline/:/usr/share/logstash/pipeline/
@@ -42,10 +31,3 @@ services:
       - 5601:5601
     volumes:
       - ./kibana.yml:/usr/share/kibana/config/kibana.yml
-```
-
-## Run
-
-```bash
-docker-compose up -d
-```

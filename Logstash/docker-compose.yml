@@ -1,0 +1,13 @@
+version: '2'
+services:
+  logstash:
+    hostname: logstash
+    container_name: logstash
+    image: docker.elastic.co/logstash/logstash:6.5.1
+    ports:
+      - 5044:5044
+      - 8080:8080 # http input
+      - 9600:9600
+    volumes:
+      - ./pipeline/:/usr/share/logstash/pipeline/
+      - ./logstash.yml:/usr/share/logstash/config/logstash.yml
