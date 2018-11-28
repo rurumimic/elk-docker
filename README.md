@@ -4,10 +4,10 @@ ELK stack with docker
 
 ## docker-compose.yml
 
-You need these:
-- `kibana.yml`
-- `logstash.yml`
-- `pipeline/logstash.conf`
+It's dangerous to go alone! Take these:
+- [`kibana.yml`](https://github.com/rurumimic/elk-docker/blob/master/Kibana/kibana.yml)
+- [`logstash.yml`](https://github.com/rurumimic/elk-docker/blob/master/Logstash/logstash.yml)
+- [`pipeline/logstash.conf`](https://github.com/rurumimic/elk-docker/blob/master/Logstash/logstash.http.sample.conf)
 
 ```yml
 version: '2.4'
